@@ -1,8 +1,6 @@
-import { alert, error, defaultModules } from '../node_modules/@pnotify/core/dist/PNotify.js';
-import * as PNotifyMobile from '../node_modules/@pnotify/mobile/dist/PNotifyMobile.js';
+  import { alert, error, defaultModules } from '../../node_modules/@pnotify/core/dist/PNotify.js';
 
-defaultModules.set(PNotifyMobile, {});
-
-alert ({
-          text: 'Notice me, senpai!'
-    });
+  const infoBox = ()=> {
+  error ({ text: "You must enter query parameters!"});
+  }
+  export {infoBox};
