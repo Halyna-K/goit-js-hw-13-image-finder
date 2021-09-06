@@ -1,28 +1,33 @@
 import refs from './refs.js';
-import createGalleryTpl from '../templates/imageGallery.hbs';
+import createItemTpl from '../templates/imageItem.hbs';
 
 const renderGallery = (data) => {
-    const markup = createGalleryTpl(data);
-    refs.gallery.insertAdjacentHTML('afterbegin', markup);
+    const markup = createItemTpl(data);
+    refs.gallery.insertAdjacentHTML('beforeend', markup);
     showBtn();
 }
 const showBtn = () => {
-    refs.buttonLoadMore.classList.remove('not_visible');
+    refs.more.classList.remove('not_visible');
   }
 const hideBtn = ()=> {
-    refs.buttonLoadMore.classList.add('not_visible');
+    refs.more.classList.add('not_visible');
   }
 
 const clearInfo = () => {
     refs.gallery.innerHTML = '';
   }
 
-  const  scrollPage = (top,width)=> {
-    window.scrollTo({
-      top: top + window.pageYOffset,
-      width: width + window.pageXOffset,
-      behavior: "smooth",
-    });
+const  scrollPage = ()=> {
+   more.scrollIntoView({
+    behavior: 'smooth',
+    block: 'end',
+  });
+  // window.scrollTo({
+  //   top: top + window.pageYOffset,
+  //   width: width + window.pageXOffset,
+  //   behavior: "smooth",
+  //   block: 'end',
+  // });
   }
 
 export {
