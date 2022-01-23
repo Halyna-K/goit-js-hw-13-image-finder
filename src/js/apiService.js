@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const URL ={
 BASE_URL: `https://pixabay.com/api/`,
-API_KEY: '23194515-4229c06a71e7a36cb0b196559',
+API_KEY: '',
 search: '',
 image_type: 'photo',
 orientation: 'horizontal',
